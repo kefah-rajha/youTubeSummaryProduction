@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   async rewrites() {
     const isProduction = process.env.NODE_ENV === 'production';
     const apiUrl = isProduction 
-      ? 'https://youtubesummarynodeproduction.onrender.com'
+      ? 'https://youtube-summary-node-production.vercel.app/'
       : 'http://localhost:5000';
 
     return [
