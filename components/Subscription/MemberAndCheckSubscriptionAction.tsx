@@ -4,18 +4,21 @@ import { useCheckSubscriptionTier } from "@/hooks/useCheckSubscriptionTier"
  import { SubscriptionPrompt } from "@/components/Subscription/SubscriptionPrompt"
 
 type Action = () => void
+type ActionFun = (...args: any[]) => void | Promise<void>;
 
 interface RenderProps {
   action: Action
 }
 
+type Tier = "Advanced" | "pro" | "starter";
+
 interface MemberOnlyActionProps {
-  action: () => void
+  action: ActionFun
   render: (props: RenderProps) => React.ReactElement
-  tiers: string[] 
+  tiers: Tier[] 
 }
 
-export const MemberOnlyAction = ({ action, render ,tiers }: MemberOnlyActionProps) => {
+export const MemberAndCheckSubscriptionAction = ({ action, render ,tiers }: MemberOnlyActionProps) => {
   const IsSubscriptionTier = useCheckSubscriptionTier(tiers)
 
   if (IsSubscriptionTier) {

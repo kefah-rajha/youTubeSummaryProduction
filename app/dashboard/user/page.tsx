@@ -90,19 +90,7 @@ function Page() {
 <HomePageBackground />
     <div className='  heighWithOutBar overflow-auto pt-4 pb-10 bg-gradient w-[95%] mx-auto'>
       
-      <Toaster
-        position="top-right" // Or your preferred position
-        reverseOrder={false} // Or your preferred order
-        gutter={8} // Spacing
-        toastOptions={{
-          // Default options for all types
-          className: 'bg-background', // You can add common classes here
-          duration: 5000, // Default duration
-          
-
-
-        }}
-      />
+     
 
       <div className='h-14 flex items-center overflow-auto   justify-end gap-2'>
         <UserFilter pageNumber={currentPage} pageSize={pageSize} setUsers={setUsers} setLoading={setLoading} />

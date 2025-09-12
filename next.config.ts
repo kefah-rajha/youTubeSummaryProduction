@@ -4,7 +4,7 @@ import type { NextConfig } from 'next';
 const nextConfig: NextConfig = {
   async rewrites() {
     const isProduction = process.env.NEXT_PUBLIC_ENV === 'production';
-    const apiUrl = 'https://youtube-summary-node-production.vercel.app'
+    const apiUrl = 'http://localhost:5000'
       
 
     return [

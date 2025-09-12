@@ -19,7 +19,7 @@ export default function Navbar() {
   const { user, isLoaded } = useUser()
   const [isAdmin, setIsAdmin] = useState(false)
   const pathname = usePathname();
-  
+
 
   // Show error toast when error occurs
   useEffect(() => {
@@ -35,51 +35,59 @@ export default function Navbar() {
   }, [user, isLoaded])
 
 
-    if (pathname?.startsWith('/dashboard')) {
+  if (pathname?.startsWith('/dashboard')) {
     return null;
   }
 
   return (
-    <div className="flex justify-between items-center p-4 fixed w-full h-16 bg-transparent backdrop-filter backdrop-blur-md shadow-lg">
-
+    <div className="flex justify-between  items-center p-4 fixed z-50 w-full h-16 bg-transparent backdrop-filter backdrop-blur-md shadow-lg">
+      <div onClick={() => {
+        push("/")
+      }} className='cursor-pointer'>
+        <h1 className=' z-10 text-2xl' >SaaSVender</h1>
+      </div>
       <div className=" flex justify-between items-center gap-3">
 
-        <ModeToggle />
 
 
-        <Button variant="outline" size="icon" className='cursor-pointer' onClick={() => {
-          push("/profile")
+        {user && isAdmin && <Button variant="outline" size="default" className='cursor-pointer ' onClick={() => {
+          push("/dashboard")
         }}>
 
-          <div>
-            <UserRound className='text-green-300 relative z-10' />
+          <div className='text-green-500'>
+            Dashboard
           </div>
-        </Button>
-        <h4>{data?.firstName}</h4>
+        </Button>}
+
+
+        
         <SubscriptionStatus lifeTimeDeal={data?.lifeTimeDeal}
           freeTrialEnd={data?.freeTrialEnd}
           subscriptionStatus={data?.currentSubscriptionId?.status}
           productName={data?.currentSubscriptionId?.productName}
           isLoading={isLoading} />
-          <Button variant="outline" size="default" className='cursor-pointer ' onClick={() => {
-        push("/Pricing")
-      }}>
+        <Button variant="outline" size="default" className='cursor-pointer ' onClick={() => {
+          push("/Pricing")
+        }}>
 
-        <div className='text-green-300'>
-          Pricing
-        </div>
-      </Button>
+          <div className='text-green-500'>
+            Pricing
+          </div>
+        </Button>
+        <h4 className='font-bold '>{data?.firstName}</h4>
+        <Button variant="outline" size="icon" className='cursor-pointer ' onClick={() => {
+          push("/profile")
+        }}>
+
+          <div>
+            <UserRound className='text-green-300 relative z-10 text-green-500' />
+          </div>
+        </Button>
+        <ModeToggle />
       </div>
-      {user && isAdmin && <Button variant="outline" size="default" className='cursor-pointer ' onClick={() => {
-        push("/dashboard")
-      }}>
 
-        <div className='text-green-300'>
-          Dashboard
-        </div>
-      </Button>}
 
-      
+
 
 
     </div>

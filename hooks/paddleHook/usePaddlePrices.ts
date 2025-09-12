@@ -108,9 +108,10 @@ export function usePaddlePrices(
       items: lineItems,
       ...(country !== 'OTHERS' && { address: { countryCode: country } }),
     };
-
+console.log(paddle,"paddlePricePreviewRequest")
     try {
       const pricesResponse = await paddle.PricePreview(paddlePricePreviewRequest);
+      console.log(pricesResponse,"pricesResponse 2222")
       
       setPrices(pricesResponse.data.details.lineItems.reduce((acc, item) => {
         acc[item.price.id] = item.formattedTotals.total;
@@ -143,6 +144,8 @@ export function usePaddlePrices(
   // تشغيل عملية جلب الأسعار عند تحديث البيانات
   useEffect(() => {
     if (pricingTier.length > 0) {
+          console.log(pricingTier,"pricingTier test")
+
       fetchPrices();
     }
   }, [pricingTier, fetchPrices]);

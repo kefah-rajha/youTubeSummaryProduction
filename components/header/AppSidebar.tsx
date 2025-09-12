@@ -109,8 +109,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               <Collapsible key={item?.title} asChild defaultOpen={item?.isActive ?? false}>
                 <SidebarMenuItem>
                   <SidebarMenuButton asChild tooltip={item.title} className={cn(Url === "/dashboard" ?
-                    Url === item.url && 'bg-green-500' : UrlWithoutDashboard.includes(item?.selected)
-                    && 'bg-green-500')}>
+                    Url === item.url && 'bg-green-300 text-background/80' : UrlWithoutDashboard.includes(item?.selected)
+                    && 'bg-green-300 text-background/80')}>
                     <a href={item.url}>
                       <item.icon />
                       <span>{item.title}</span>
@@ -129,7 +129,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                           {item.items?.map((subItem) => (
                             <SidebarMenuSubItem key={subItem.title}>
                               <SidebarMenuSubButton asChild className={cn(Url.includes(subItem?.selected)
-                                && 'text-orange-400')}>
+                                && 'bg-green-300 text-background/80')}>
                                 <a href={subItem.url}>
                                   <span>{subItem.title}</span>
                                 </a>

@@ -2,12 +2,12 @@
 
 import { useState } from 'react';
 import '@/style/home-page.css';
+import { HomePageBackground } from '@/components/gradients/home-page-background';
 
 // import { LocalizationBanner } from '@/components/home/header/localization-banner';
 // import Header from '@/components/home/header/header';
 import { HeroSection } from '@/components/Subscription/SubscriptionComponent/heroSection/hero-section';
 import { Pricing } from '@/components/Subscription/SubscriptionComponent/pricing';
-// import { HomePageBackground } from '@/components/gradients/home-page-background';
 export default function SubscriptionHome() {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -16,6 +16,7 @@ export default function SubscriptionHome() {
 
   return (
     <>
+    <HomePageBackground />
       {/* <LocalizationBanner country={country} onCountryChange={setCountry} /> */}
       <div>
         {/* <HomePageBackground /> */}

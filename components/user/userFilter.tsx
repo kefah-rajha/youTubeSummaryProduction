@@ -144,7 +144,7 @@ function UserFilter({ pageNumber, pageSize, setUsers, setLoading }: userFilterDa
     <div className="flex justify-start gap-2 ">
       <div className="flex justify-start  card-gradient shadow-sm rounded-sm h-10 ">
         <Select onValueChange={setFieldSearch} value={fieldSearch}>
-          <SelectTrigger className="w-full h-10 rounded-r-none  card-gradient text-orange-300 px-5 rounded-l-sm outline-none border-none	 ring-0 focus:outline-none focus:border-none focus:ring-0 ">
+          <SelectTrigger className="w-full h-10 rounded-r-none  bg-accent text-orange-300 px-5 rounded-l-sm outline-none border-none	 ring-0 focus:outline-none focus:border-none focus:ring-0 ">
             <SelectValue placeholder="Name" className="outline-none " />
           </SelectTrigger>
           <SelectContent>
@@ -168,7 +168,7 @@ function UserFilter({ pageNumber, pageSize, setUsers, setLoading }: userFilterDa
                 }}
                 value={searchInput}
                 id="search-dropdown"
-                className="block outline-none   card-gradient rounded-sm  p-2.5   text-sm text-white bg-transparent rounded-e-lg  "
+                className="block outline-none  placeholder:text-foreground/30  text-foreground  bg-accent rounded-sm  p-2  text-sm  b rounded-e-lg  "
                 placeholder="Search ..."
                 required
               />
@@ -181,7 +181,7 @@ function UserFilter({ pageNumber, pageSize, setUsers, setLoading }: userFilterDa
         <DialogTrigger asChild>
           <Button
             variant="outline"
-            className=" h-10 bg-background  hover:text-gray-400"
+            className=" h-10 bg-accent hover:text-gray-400"
           >
             <SlidersHorizontal className="h-4 w-4 mr-2 text-red-300 " />
             Filter

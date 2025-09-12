@@ -19,7 +19,7 @@ export default function DashboardLayout({
         <SidebarProvider>
           <AppSidebar />
 
-          <div className="flex flex-col w-full">
+          <div className="flex flex-col w-full w-1/12">
             <Navbar />
             {children}
           </div>

@@ -68,7 +68,7 @@ export default function PaddleCheckoutPage({ priceId }: PaddleCheckoutPageType) 
                                 frameTarget: 'paddle-checkout-frame',
                                 frameInitialHeight: 450,
                                 frameStyle: 'width: 100%; background-color: transparent; border: none',
-                                successUrl: '/checkout/success',
+                                successUrl: '/success',
                             },
                         },
                     }).then(async (paddle) => {
@@ -104,7 +104,7 @@ export default function PaddleCheckoutPage({ priceId }: PaddleCheckoutPageType) 
         //   };
         //   cleanup();
         // };
-    }, [paddle?.Initialized, userId,priceId,userEmail]);
+    }, [paddle?.Initialized, userId, priceId, userEmail]);
 
     return (
         <div

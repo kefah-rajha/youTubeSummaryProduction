@@ -8,13 +8,13 @@ export const getTier = async () => {
 
         });
 
-       
+
 
         if (!response.ok) {
             const errorText = await response.text();
             throw new Error(`Server error (${response.status}): ${errorText}`);
         }
- const result = await response.json();
+        const result = await response.json();
         return result;
     } catch (error) {
         console.error('Error creating tier:', error);

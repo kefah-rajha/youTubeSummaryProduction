@@ -4,13 +4,14 @@ import { useIsLikeMember } from "@/hooks/useIsLikeMember"
  import { SubscriptionPrompt } from "@/components/Subscription/SubscriptionPrompt"
 
 type Action = () => void
+type ActionFun = (...args: any[]) => void | Promise<void>;
 
 interface RenderProps {
   action: Action
 }
 
 interface MemberOnlyActionProps {
-  action: () => void
+  action: ActionFun
   render: (props: RenderProps) => React.ReactElement
 }
 

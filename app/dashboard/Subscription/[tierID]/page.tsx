@@ -215,6 +215,8 @@ const TierDetailPage = () => {
                 <Image     
                              src={tier.icon}
                   alt={`${tier.name} icon`}
+                  width={100}
+                  height={100}
                   className="w-8 h-8"
                   onError={(e: { currentTarget: { style: { display: string; }; }; }) => {
                     e.currentTarget.style.display = 'none';
