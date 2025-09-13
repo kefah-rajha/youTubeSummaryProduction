@@ -241,7 +241,7 @@ function TableUser({ users, loading }: usersType) {
                         <TableHead>Email</TableHead>
                         <TableHead className="hidden md:table-cell">Status</TableHead>
                         <TableHead className="hidden lg:table-cell">Billing</TableHead>
-                        <TableHead className="hidden lg:table-cell">Expires/Trial</TableHead>
+                        <TableHead className="hidden lg:table-cell">Next Billing</TableHead>
                         <TableHead className="hidden md:table-cell">Joined</TableHead>
                         <TableHead>Actions</TableHead>
                     </TableRow>
@@ -310,8 +310,8 @@ function TableUser({ users, loading }: usersType) {
                         Trial Ends {formatDate(user.freeTrialEnd)}
                     </Badge>
                 ) : (
-                    user.currentSubscriptionId?.endDate ?
-                        formatDate(user.currentSubscriptionId.endDate) :
+                    user.currentSubscriptionId?.nextBillingDate ?
+                        formatDate(user.currentSubscriptionId.nextBillingDate) :
                         "N/A"
                 )}
             </TableCell>

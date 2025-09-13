@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import { Match } from "@/lib/ui/Match"
-import { SubscriptionBillingCycleProvider } from "@/context/SubscriptionBillingCycle"
 // import { SubscriptionOffer } from "@/components/Subscription/SubscriptionOffer"
 import { SubscriptionCheckout } from "@/components/Subscription/SubscriptionCheckout"
 import SubscriptionHome from "@/components/Subscription/SubscriptionComponent/SubscriptionHome"
@@ -40,7 +39,6 @@ export const SubscriptionPrompt = ({ onClose }: OnCloseProp) => {
 
 
   return (
-    <SubscriptionBillingCycleProvider>
 
 
       <Match
@@ -67,7 +65,6 @@ export const SubscriptionPrompt = ({ onClose }: OnCloseProp) => {
         )}
         checkout={() => <SubscriptionCheckout onClose={onClose} />}
       />
-    </SubscriptionBillingCycleProvider>
   )
 }
 

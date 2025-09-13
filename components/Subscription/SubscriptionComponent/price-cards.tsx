@@ -67,7 +67,7 @@ export function PriceCards({ loading, frequency, priceMap }: Props) {
           </div>
           <div className={'px-8 mt-8'}>
             {isDashboardPath ? (
-              <Button className={'w-full bg-white/80 shadow-md'} variant={'secondary'} asChild={true}>
+              <Button className={'w-full  shadow-md'} variant={'secondary'} asChild={true}>
                 <Link href={`/dashboard/Subscription/${tier._id}`}>Edit</Link>
               </Button>
             ) : (

@@ -320,38 +320,7 @@ export default function UserDetailsPage() {
         {/* Subscription Information */}
 
         <SubscriptionDetails user={user} />
-{/* 
-        {(user.settings || user.currentSubscription?.paymentProcessorSubscriptionId) && (
-          <Card className="md:col-span-2">
-            <CardHeader>
-              <CardTitle className="flex items-center space-x-2">
-                <Settings className="h-5 w-5" />
-                <span>Additional Information</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              {user.currentSubscription?.paymentProcessorSubscriptionId && (
-                <InfoItem
-                  icon={<CreditCard className="h-5 w-5" />}
-                  label="Payment Processor Subscription ID"
-                  value={user.currentSubscription.paymentProcessorSubscriptionId}
-                />
-              )}
 
-              {user.settings && Object.keys(user.settings).length > 0 && (
-                <InfoItem
-                  icon={<Settings className="h-5 w-5" />}
-                  label="User Settings"
-                  value={
-                    <pre className="text-xs bg-muted p-2 rounded overflow-x-auto">
-                      {JSON.stringify(user.settings, null, 2)}
-                    </pre>
-                  }
-                />
-              )}
-            </CardContent>
-          </Card>
-        )} */}
       </div>
     </div>
   );
