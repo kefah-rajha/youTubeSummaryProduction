@@ -4,7 +4,7 @@ import { useCheckSubscriptionTier } from "@/hooks/useCheckSubscriptionTier"
  import { SubscriptionPrompt } from "@/components/Subscription/SubscriptionPrompt"
 
 type Action = () => void
-type ActionFun = (...args: any[]) => void | Promise<void>;
+type ActionFun = (...args: React.FormEvent[]) => void | Promise<void>;
 
 interface RenderProps {
   action: Action

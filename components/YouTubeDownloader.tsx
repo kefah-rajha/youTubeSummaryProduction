@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { MemberOnlyAction } from './Subscription/MemberOnlyAction';
-import { MemberAndCheckSubscriptionAction } from './Subscription/MemberAndCheckSubscriptionAction';
 
 interface YouTubeDownloaderProps {
   onDownloadStarted: () => void;
@@ -68,7 +67,7 @@ export function YouTubeDownloader({ onDownloadStarted }: YouTubeDownloaderProps)
               className="w-full p-3 pr-32  rounded-md  border focus:outline-none focus:ring-2 focus:ring-blue-500 "
               disabled={isLoading}
             />
-            {/* <MemberOnlyAction
+            <MemberOnlyAction
               action={ handleSubmit}
               render={({ action }) => (
                 <button
@@ -80,21 +79,8 @@ export function YouTubeDownloader({ onDownloadStarted }: YouTubeDownloaderProps)
                  
                 </button>
               )}
-            /> */}
-            <MemberAndCheckSubscriptionAction
-            tiers={[]}
-              action={ handleSubmit}
-              render={({ action }) => (
-                <button
-              onClick={action}
-              disabled={isLoading}
-              className="absolute shadow right-1 top-1 bottom-1 bg-gradient-to-r from-emerald-200 to-[#59bb6d] text-white  px-4 rounded-md hover:from-emerald-300 hover:to-green-400 focus:outline-none focus:ring-2 focus:ring-emerald-300 focus:ring-opacity-50 disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed transition-all duration-200  overflow-hidden before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-1/2 before:bg-gradient-to-b before:from-white/30 before:to-transparent before:pointer-events-none after:content-[''] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-gradient-to-r after:from-transparent after:via-white/60 after:to-transparent after:pointer-events-none"
-            >
-                  {isLoading ? 'Processing...' : 'Download'}
-                 
-                </button>
-              )}
-            /> 
+            />
+      
 
 
           </div>

@@ -32,7 +32,7 @@ export default function PaddleCheckoutPage({ priceId }: PaddleCheckoutPageType) 
     const [error, setError] = useState<string | null>(null);
     const [paddle, setPaddle] = useState<Paddle | null>(null);
     const [checkoutData, setCheckoutData] = useState<CheckoutEventsData | null>(null);
-
+    console.log(checkoutData)
     // Redirect to sign-up if user is not authenticated
     useEffect(() => {
         if (!userId) {

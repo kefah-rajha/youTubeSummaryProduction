@@ -4,7 +4,6 @@ import TableUser from "@/components/user/tableUser"
 import UserFilter from "@/components/user/userFilter"
 import { PaginationControls } from "@/components/Pagination/PaginationControls";
 import { useEffect, useState } from "react"
-import { Toaster } from 'react-hot-toast';
 import '@/style/home-page.css';
 import { HomePageBackground } from '@/components/gradients/home-page-background';
 

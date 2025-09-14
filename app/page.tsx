@@ -32,7 +32,7 @@ export default function Home() {
 
   // Fetch user subscription data
   const { data } = useFetchSubscriptionData();
-  
+  console.log(data,)
   // Redirect to sign-in if user is not authenticated
   useEffect(() => {
     // Only redirect when auth state is loaded and no user ID exists
@@ -43,6 +43,7 @@ export default function Home() {
 
   // State to trigger refreshes of the downloads list
   const [refreshDownloads, setRefreshDownloads] = useState(0);
+  console.log(refreshDownloads)
   
   /**
    * Callback function to trigger a refresh of the downloads list

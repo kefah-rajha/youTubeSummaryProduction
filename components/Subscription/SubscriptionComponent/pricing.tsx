@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { BillingFrequency, IBillingFrequency } from '@/contants/billing-frequency';
 import { Environments, initializePaddle, Paddle } from '@paddle/paddle-js';
 import { usePaddlePrices } from '@/hooks/paddleHook/usePaddlePrices';
-import { Console } from 'console';
 
 interface Props {
   country: string;
@@ -29,7 +28,6 @@ export function Pricing({ country }: Props) {
       });
     }
   }, []);
-console.log(paddle,"paddle 222")
   return (
     <div className="mx-auto max-w-7xl relative px-[32px] flex flex-col items-center justify-between">
       <Toggle frequency={frequency} setFrequency={setFrequency} />
